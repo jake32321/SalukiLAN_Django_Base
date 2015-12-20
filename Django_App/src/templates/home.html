@@ -1,10 +1,20 @@
 {% extends "base.html" %}
+
 	{% block jumbotron_content %}
 	<h1>Welcome to Jake's Web App!</h1>
 	{% endblock %}
+
 	{% block body_content %}
 	<p>Hello and welcome to my test webapp!  This will soon be the home of the new <br>
 	SalukiLAN site and will provide information on the event and how you can register!</p>
+	<br>
+	<p>Enter your email for updates!</p>
+	<!-- Retrieves the form for the email entry that can be found in forms.py and views.py -->
+	<form>
+		{{ form.as_p }}
+		<input type="submit" value="Submit Email" class="btn" require/>
+	</form>
+	
 	{% endblock %}
 	
 		
