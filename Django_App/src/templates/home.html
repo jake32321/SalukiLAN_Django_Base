@@ -8,11 +8,28 @@
 	<p>Hello and welcome to my test webapp!  This will soon be the home of the new <br>
 	SalukiLAN site and will provide information on the event and how you can register!</p>
 	<br>
-	<p>Enter your email for updates!</p>
+	<p>Enter your name and email for updates!</p>
+	<p style="color: red">This site requires you to have cookies enabled!</p>
 	<!-- Retrieves the form for the email entry that can be found in forms.py and views.py -->
-	<form>
-		{{ form.as_p }}
-		<input type="submit" value="Submit Email" class="btn" require/>
+	<form method="POST" action=""> {% csrf_token %}
+	<table>
+		<tr>
+			<td>
+				<label for='user_name'>Name: </label> 		
+				<input type='text' id='user_name' name='name'/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ form.as_p }} <!-- Sets up the email field as a paragraph -->
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type='submit' value='Submit Email' class='btn' require/>
+			</td>
+		</tr>
+	</table>
 	</form>
 	
 	{% endblock %}
