@@ -1,4 +1,5 @@
 from django import forms 
 
 class EmailForm(forms.Form):
-	email = forms.EmailField() 
+	name = forms.CharField(required = True)
+	email = forms.EmailField(required = True) 
