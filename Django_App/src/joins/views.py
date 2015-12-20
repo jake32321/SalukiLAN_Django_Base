@@ -5,6 +5,7 @@ from .forms import EmailForm
 
 #Moves the home page view to the joins app
 def home(req):
+	print req.POST['name'], req.POST['email']
 	form = EmailForm() #Creates a form where we can get the email from
 	context = {"form": form} 
 	template = "home.html" #Picks the right template for the page
