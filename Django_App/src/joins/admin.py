@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Join
 
 class JoinAdmin(admin.ModelAdmin):
-	list_display = ['__unicode__','email', 'timestamp', 'updates']
+	list_display = ['__unicode__','email', 'timestamp', 'updates', 'name']
 	class Meta:
 		model = Join
 
