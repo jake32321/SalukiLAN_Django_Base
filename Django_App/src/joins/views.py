@@ -15,7 +15,7 @@ def home(req):
 		print new_join, created
 		print new_join.timestamp
 		if created:
-			print "This object was created"
+			print "This object was created "
 	context = {"form": form} 
 	template = "home.html" #Picks the right template for the page
 	return render(req, template, context) #Renders everything for the page 
