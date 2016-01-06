@@ -1,6 +1,6 @@
 ## SalukiLAN Django Base
 
-![SalukiLAN logo](./SLAN.png)
+![SalukiLAN logo](./SLAN.png)<br>
 ![Powered_by_Django logo](./djangopowered126x54.gif)
 
 ## A Word from the noble Jake 
