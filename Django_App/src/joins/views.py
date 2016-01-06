@@ -5,7 +5,7 @@ import uuid
 
 #Attempt to get this working at a later date?
 
-#Gets the user's IP address
+#Gets the user's IP address (Not sure if this needs to be in the final revision)
 def get_user_ip(req):
 	try: #Checks for the user's IP under HTTP_X_FORWARDED_FOR
 		x_forwarded = req.META.get("HTTP_X_FORWARED_FOR")
@@ -35,11 +35,60 @@ def home(req):
 		email = form.cleaned_data['email']
 		name = form.cleaned_data['name']
 		ip_address = get_user_ip(req)
-		new_join, created = Join.objects.get_or_create(email = email, name = name, ip_address = ip_address, ref_id = ref_id)
+		new_join, created = Join.objects.get_or_create(
+			email = email,
+			name = name,
+			ip_address = ip_address,
+			ref_id = ref_id
+		)
 		print new_join, created
 		print new_join.timestamp
 		if created:
 			print "This object was created"
-	context = {"form": form} 
+	context = {"form": form}
 	template = "home.html" #Picks the right template for the page
-	return render(req, template, context) #Renders everything for the page 
+	return render(req, template, context) #Renders everything for the page
+
+# The bellow functions will be used to process requests for a specific page
+# and this may or may not be the last changes made to this since more might
+# be added or some removed.
+
+# def about(req):
+# 	print req
+# 	context = {"form": form}
+# 	template = "#nameoftemplate"
+# 	return render(req, template, context)
+#
+# def event_rules(req):
+# 	print req
+# 	context = {"form": form}
+# 	template = "#nameoftemplate"
+# 	return render(req, template, context)
+#
+# def tournaments(req):
+# 	print req
+# 	context = {"form": form}
+# 	template = "#nameoftemplate"
+# 	return render(req, template, context)
+#
+# def gallery(req):
+# 	print req
+# 	context = {"form": form}
+# 	template = "#nameoftemplate"
+# 	return render(req, template, context)
+#
+# def sponsors(req):
+# 	print req
+# 	context = {"form": form}
+# 	template = "#nameoftemplate"
+# 	return render(req, template, context)
+#
+# def reserve_a_seat(req):
+# 	print req
+# 	context = {"form": form}
+# 	template = "#nameoftemplate"
+# 	return render(req, template, context)
+
+# My Account Tab will be removed since we will send a confirmation email with
+# the details regarding their reservation in 'reserve-a-seat'.  Look for updates
+# in later revisions of the site.

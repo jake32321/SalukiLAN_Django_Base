@@ -18,11 +18,11 @@ urlpatterns = patterns('',
 
     # The 'namehere' will be the part with the file name located in the views dir.
 
-    # url(r'^about/', 'joins.views.#namehere', name='about'),
-    # url(r'^event-rules/', 'joins.views.#namehere', name='event-rules'),
-    # url(r'^tournaments/', 'joins.views.#namehere', name='tournaments'),
-    # url(r'^gallery/', 'joins.views.#namehere', name='gallery'),
-    # url(r'^sponsors/', 'joins.views.#namehere', name='sponsors'),
-    # url(r'^reserve-a-seat/', 'joins.views.#namehere', name='reserve-a-seat'),
+    # url(r'^about/', 'joins.views.about', name='about'),
+    # url(r'^event-rules/', 'joins.views.event_rules', name='event_rules'),
+    # url(r'^tournaments/', 'joins.views.tournaments', name='tournaments'),
+    # url(r'^gallery/', 'joins.views.gallery', name='gallery'),
+    # url(r'^sponsors/', 'joins.views.sponsors', name='sponsors'),
+    # url(r'^reserve-a-seat/', 'joins.views.reserve_a_seat', name='reserve-a-seat'),
     # url(r'^my-account/', 'joins.views.#namehere', name='my-account'),
 )
