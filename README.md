@@ -1,6 +1,7 @@
 ## SalukiLAN Django Base
 
 ![SalukiLAN logo](./SLAN.png)
+![Powered_by_Django logo](./djangopowered126x54.gif)
 
 ## A Word from the noble Jake 
 
@@ -28,3 +29,24 @@ export PATH="$HOME/Development/SalukiLAN_Django_Base/Django_App/bin:$PATH"
 
 ## Usage
 `python src/manage.py runserver`
+
+##Making URLs For the Site
+####Definining A Function For Requests 
+Each of the pages or "views" made will need to have a way that the page can be accessed.  This can be done using a function and will need to be done this way to work properly with Django.  The example bellow shows how this can be done using a function.
+
+```Python
+def reserve_a_seat(req):
+ 	print req
+	context = {"form": form}
+	template = "#nameoftemplate"
+	return render(req, template, context)
+```
+This will need to be done in ```src/joins/views.py``` following the other functions.  Other items can be added to the function for forms and the like.
+
+####Adding The URL To The Site
+Once the above task has been completed you will need to add the function to a URL.  This can be done in ```src/app/urls.py``` by adding the following python under the rest of the code.
+
+```Python
+url(r'^urlnamehere/', 'joins.views.addfunctnamehere', name='nameforurlhere')
+```
+This should be all that needs to be done for the most part when adding a new view.  Remember to add the HTML doc to the templates folder under ```src/templates``` which is where the other templates are being stored at.
