@@ -1,7 +1,10 @@
 ## SalukiLAN Django Base
 
+
 ![SalukiLAN logo](./SLAN.png)<br>
 ![Powered_by_Django logo](./djangopowered126x54.gif)
+<br>
+[![Build Status](https://travis-ci.org/jake32321/SalukiLAN_Django_Base.svg?branch=master)](https://travis-ci.org/jake32321/SalukiLAN_Django_Base)
 
 ## A Word from the noble Jake 
 
