@@ -19,4 +19,4 @@ install:
    # Travis is currently working on
  - pip install -q Django==$DJANGO_VERSION --index-url
 # Tell Travis how to run the test script itself
-script: python quicktest.py softhyphen
+script: python manage.py test
