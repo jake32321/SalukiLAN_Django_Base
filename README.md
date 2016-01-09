@@ -17,14 +17,14 @@ cd Development
 git clone https://github.com/jake32321/SalukiLAN_Django_Base
 
 sudo pip install virtualenv virtualenvwrapper Django==1.6.5
-cd SalukiLAN_Django_Base/Django_App/
+cd SalukiLAN_Django_Base
 virtualenv .
 source bin/activate
 
 sudo pip install south
 
-export VIRTUAL_ENV="$HOME/Development/SalukiLAN_Django_Base/Django_App"
-export PATH="$HOME/Development/SalukiLAN_Django_Base/Django_App/bin:$PATH"
+export VIRTUAL_ENV="$HOME/Development/SalukiLAN_Django_Base"
+export PATH="$HOME/Development/SalukiLAN_Django_Base/bin:$PATH"
 ```
 
 ## Usage
