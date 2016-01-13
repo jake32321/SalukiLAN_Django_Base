@@ -6,16 +6,16 @@ import uuid
 #Attempt to get this working at a later date?
 
 #Gets the user's IP address (Not sure if this needs to be in the final revision)
-def get_user_ip(req):
-	try: #Checks for the user's IP under HTTP_X_FORWARDED_FOR
-		x_forwarded = req.META.get("HTTP_X_FORWARED_FOR")
-		if x_forwarded:
-			ip = x_forwarded
-		else: #Gets the user's IP under REMOTE_ADDR
-			ip = req.META.get("REMOTE_ADDR")
-	except: #Worst case sets as empty string
-		ip = ""
-	return ip
+# def get_user_ip(req):
+# 	try: #Checks for the user's IP under HTTP_X_FORWARDED_FOR
+# 		x_forwarded = req.META.get("HTTP_X_FORWARED_FOR")
+# 		if x_forwarded:
+# 			ip = x_forwarded
+# 		else: #Gets the user's IP under REMOTE_ADDR
+# 			ip = req.META.get("REMOTE_ADDR")
+# 	except: #Worst case sets as empty string
+# 		ip = ""
+# 	return ip
 
 #Creates a unique identifier for each user
 def get_uuid():
@@ -31,15 +31,19 @@ def home(req):
 	#print req.POST['name'], req.POST['email']
 	form = EmailForm(req.POST or None) #Allows the page to be rendered if there is nothing to be posted
 	if form.is_valid():
-		ref_id = get_uuid()
+		# ref_id = get_uuid()
 		email = form.cleaned_data['email']
 		name = form.cleaned_data['name']
-		ip_address = get_user_ip(req)
+		address = form.cleaned_data['address']
+		zipcode = form.cleaned_data['zipcode']
+		cell_number = form.cleaned_data['cell_number']
 		new_join, created = Join.objects.get_or_create(
 			email = email,
 			name = name,
-			ip_address = ip_address,
-			ref_id = ref_id
+			address = address,
+			zipcode = zipcode,
+			cell_number = cell_number
+			# ref_id = ref_id
 		)
 		print new_join, created
 		print new_join.timestamp
