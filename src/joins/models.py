@@ -9,6 +9,8 @@ class Join(models.Model):
 	updates = models.DateTimeField(auto_now_add = False, auto_now = True)
 	name = models.TextField()
 	address = models.TextField()
+	city = models.TextField()
+	state = model.CharField(max_length=2, default='xx')
 	zipcode = models.CharField(max_length=120, default='xxxx')
 	cell_number = models.CharField(max_length=120, default='(xxx) xxx-xxxx')
 

@@ -41,6 +41,8 @@ def home(req):
 			email = email,
 			name = name,
 			address = address,
+			city = city,
+			state = state,
 			zipcode = zipcode,
 			cell_number = cell_number
 			# ref_id = ref_id
